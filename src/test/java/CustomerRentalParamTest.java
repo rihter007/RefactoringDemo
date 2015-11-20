@@ -17,7 +17,7 @@ import java.util.Collection;
  */
 
 @RunWith(Parameterized.class)
-public class CustomerTestRentalParam
+public class CustomerRentalParamTest
 {
     private static class RentalPriceIndex
     {
@@ -36,7 +36,7 @@ public class CustomerTestRentalParam
 
     public final RentalPriceIndex testParameter;
 
-    public CustomerTestRentalParam(RentalPriceIndex param)
+    public CustomerRentalParamTest(RentalPriceIndex param)
     {
         this.testParameter = param;
     }
