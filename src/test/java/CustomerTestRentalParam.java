@@ -2,7 +2,6 @@ import com.scrumtrek.simplestore.Customer;
 import com.scrumtrek.simplestore.Movie;
 import com.scrumtrek.simplestore.PriceCodes;
 import com.scrumtrek.simplestore.Rental;
-import com.sun.istack.internal.NotNull;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -22,7 +21,7 @@ public class CustomerTestRentalParam
 {
     private static class RentalPriceIndex
     {
-        public RentalPriceIndex(@NotNull PriceCodes priceCode, int daysRent, double expectedPriceValue)
+        public RentalPriceIndex(PriceCodes priceCode, int daysRent, double expectedPriceValue)
         {
             this.priceCode = priceCode;
             this.daysRent = daysRent;
@@ -37,7 +36,7 @@ public class CustomerTestRentalParam
 
     public final RentalPriceIndex testParameter;
 
-    public CustomerTestRentalParam(@NotNull RentalPriceIndex param)
+    public CustomerTestRentalParam(RentalPriceIndex param)
     {
         this.testParameter = param;
     }
@@ -48,7 +47,7 @@ public class CustomerTestRentalParam
         return Arrays.asList(new RentalPriceIndex(PriceCodes.Childrens, 1, 1.5));
     }
 
-    private static void checkMoviePrice(@NotNull String movieName, double price, @NotNull String actualStatement)
+    private static void checkMoviePrice(String movieName, double price, String actualStatement)
     {
         final String searchedPattern = movieName + "\t" + price;
         Assert.assertTrue(actualStatement.contains(searchedPattern));
