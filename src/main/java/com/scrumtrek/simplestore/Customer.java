@@ -61,41 +61,53 @@ public class Customer
     }
 
 	private String name;
-	private List<RentalInfo> rentals = new ArrayList<>();
+	private List<Rental> rentals = new ArrayList<>();
 
 	public Customer(String name)
 	{
 		this.name = name;
 	}
 
-	public String getName()
-	{
-		return this.name;
-	}
-
 	public void addRental(Rental rental)
 	{
         // we can create statement at this point, but I am lazy :)
-		this.rentals.add(new RentalInfo(rental));
+		this.rentals.add(rental);
 	}
 
-	public String Statement()
-	{
-        String result = "Rental record for " + this.name + "\n";
+    public String getName()
+    {
+        return this.name;
+    }
 
+    /*public double getTotalPayment()
+    {
         double totalAmount = 0.0;
-        int frequentRenterPoints = 0;
-        for (RentalInfo rentalInfo : this.rentals)
-        {
-            result += "\t" + rentalInfo.movieTitle + "\t" + rentalInfo.totalAmount + "\n";
+        for (Rental rentalInfo : this.rentals)
             totalAmount += rentalInfo.totalAmount;
+
+        return totalAmount;
+    }
+
+    public int getTotalBonus()
+    {
+        int frequentRenterPoints = 0;
+        for (Rental rentalInfo : this.rentals)
             frequentRenterPoints += rentalInfo.frequentPoints;
+
+        return frequentRenterPoints;
+    }*/
+
+	public void Statement(IReportCreator report)
+    {
+        report.initialize(this.name);
+
+        for (Rental rentalInfo : this.rentals)
+        {
+            report.addReportItem(new ReportItem(rentalInfo.getMovie().getTitle(), getBonusForTargetRental(rentalInfo), getFrequentPointsForRental(rentalInfo)));
         }
 
-        result += "Amount owed is " + totalAmount + "\n";
-        result += "You earned " + frequentRenterPoints + " frequent renter points.";
-        return result;
-	}
+        report.finalize(null);
+    }
 
     private static double getBonusForTargetRental(Rental rental)
     {

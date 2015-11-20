@@ -1,7 +1,4 @@
-import com.scrumtrek.simplestore.Customer;
-import com.scrumtrek.simplestore.Movie;
-import com.scrumtrek.simplestore.PriceCodes;
-import com.scrumtrek.simplestore.Rental;
+import com.scrumtrek.simplestore.*;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -74,6 +71,9 @@ public class CustomerRentalParamTest
 
         dummyCustomer.addRental(inputRent);
 
-        checkMoviePrice(childrenMovie.getTitle(), this.testParameter.expectedPriceValue, dummyCustomer.Statement());
+        SimpleTextReport simpleTextReport = new SimpleTextReport();
+        dummyCustomer.Statement(simpleTextReport);
+
+        checkMoviePrice(childrenMovie.getTitle(), this.testParameter.expectedPriceValue, simpleTextReport.getReport());
     }
 }

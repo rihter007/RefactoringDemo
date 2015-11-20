@@ -25,10 +25,11 @@ class MainClass
 		custMickeyMouse.addRental(rental3);
 
 		// Generate invoice
-		String statement = custMickeyMouse.Statement();
+		SimpleTextReport simpleTextReport = new SimpleTextReport();
+		custMickeyMouse.Statement(simpleTextReport);
 
 		// Print the statement
-		System.out.println(statement);
+		System.out.println(simpleTextReport.getReport());
 	}
 }
 
