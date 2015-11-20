@@ -37,8 +37,8 @@
       <file leaf-file-name="CustomerRentalParamTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/CustomerRentalParamTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.567696">
-              <caret line="50" column="65" selection-start-line="50" selection-start-column="65" selection-end-line="50" selection-end-column="65" />
+            <state vertical-scroll-proportion="0.37529692">
+              <caret line="47" column="67" selection-start-line="47" selection-start-column="67" selection-end-line="47" selection-end-column="67" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1078#1079#0" expanded="true" />
@@ -62,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/scrumtrek/simplestore/Customer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+              <caret line="100" column="38" selection-start-line="100" selection-start-column="38" selection-end-line="100" selection-end-column="38" />
               <folding>
                 <element signature="e#2414#2415#0" expanded="true" />
                 <element signature="e#2462#2463#0" expanded="true" />
@@ -649,9 +649,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_RefactoringDemo - 2015.11.20 at 11h 52m 04s.xml">
-      <configuration name="All in RefactoringDemo" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_in_RefactoringDemo - 2015.11.20 at 12h 44m 55s.xml">
       <configuration name="All in RefactoringDemo" configurationId="JUnit" />
     </history-entry>
@@ -671,6 +668,9 @@
       <configuration name="All in RefactoringDemo" configurationId="JUnit" />
     </history-entry>
     <history-entry file="All_in_RefactoringDemo - 2015.11.20 at 15h 25m 44s.xml">
+      <configuration name="All in RefactoringDemo" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_RefactoringDemo - 2015.11.20 at 15h 34m 51s.xml">
       <configuration name="All in RefactoringDemo" configurationId="JUnit" />
     </history-entry>
     <history-entry file="CustomerRentalParamTest - 2015.11.20 at 15h 20m 36s.xml">
@@ -763,7 +763,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/CustomerRentalParamTest.java</url>
-          <line>56</line>
+          <line>60</line>
           <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
@@ -890,7 +890,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/scrumtrek/simplestore/Customer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+          <caret line="100" column="38" selection-start-line="100" selection-start-column="38" selection-end-line="100" selection-end-column="38" />
           <folding>
             <element signature="e#2414#2415#0" expanded="true" />
             <element signature="e#2462#2463#0" expanded="true" />
@@ -900,8 +900,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/CustomerRentalParamTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.567696">
-          <caret line="50" column="65" selection-start-line="50" selection-start-column="65" selection-end-line="50" selection-end-column="65" />
+        <state vertical-scroll-proportion="0.37529692">
+          <caret line="47" column="67" selection-start-line="47" selection-start-column="67" selection-end-line="47" selection-end-column="67" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1078#1079#0" expanded="true" />
