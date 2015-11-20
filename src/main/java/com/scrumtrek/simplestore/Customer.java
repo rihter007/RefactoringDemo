@@ -78,7 +78,7 @@ public class Customer
                 return calculateBonusForChildrensPriceCode(daysRented);
         }
 
-        return 0;
+        throw new AssertionError();
     }
 
 	private double calculateBonusForRegularPriceCode(int daysRented)
