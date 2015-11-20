@@ -71,8 +71,9 @@ public class CustomerRentalParamTest
 
         dummyCustomer.addRental(inputRent);
 
+        SimplePriceCalculator simplePriceCalculator = new SimplePriceCalculator();
         SimpleTextReport simpleTextReport = new SimpleTextReport();
-        dummyCustomer.Statement(simpleTextReport);
+        dummyCustomer.Statement(simpleTextReport, simplePriceCalculator);
 
         checkMoviePrice(childrenMovie.getTitle(), this.testParameter.expectedPriceValue, simpleTextReport.getReport());
     }

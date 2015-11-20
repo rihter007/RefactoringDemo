@@ -7,7 +7,7 @@ public interface IReportCreator
 {
     void initialize(String header);
     void addReportItem(ReportItem reportItem);
-    void finalize(String optional);
+    void finish(String optional);
 
     String getReport();
 }

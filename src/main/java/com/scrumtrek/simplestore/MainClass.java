@@ -25,8 +25,9 @@ class MainClass
 		custMickeyMouse.addRental(rental3);
 
 		// Generate invoice
+		SimplePriceCalculator simplePriceCalculator = new SimplePriceCalculator();
 		SimpleTextReport simpleTextReport = new SimpleTextReport();
-		custMickeyMouse.Statement(simpleTextReport);
+		custMickeyMouse.Statement(simpleTextReport, simplePriceCalculator);
 
 		// Print the statement
 		System.out.println(simpleTextReport.getReport());

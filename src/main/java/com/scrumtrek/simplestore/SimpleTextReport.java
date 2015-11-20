@@ -21,7 +21,7 @@ public class SimpleTextReport implements IReportCreator
         frequentRenterPoints += reportItem.bonus;
     }
 
-    public void finalize(String optional)
+    public void finish(String optional)
     {
         report += "Amount owed is " + totalAmount + "\n";
         report += "You earned " + frequentRenterPoints + " frequent renter points.";
