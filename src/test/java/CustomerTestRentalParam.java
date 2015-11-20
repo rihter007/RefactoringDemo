@@ -14,12 +14,13 @@ import java.util.Collection;
 
 /**
  * Created by Rihter on 20.11.2015.
+ * Checks that single rent for specified number of days and PriceCode
  */
 
 @RunWith(Parameterized.class)
 public class CustomerTestRentalParam
 {
-    public static class RentalPriceIndex
+    private static class RentalPriceIndex
     {
         public RentalPriceIndex(@NotNull PriceCodes priceCode, int daysRent, double expectedPriceValue)
         {
