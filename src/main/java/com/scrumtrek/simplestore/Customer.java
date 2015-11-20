@@ -5,6 +5,16 @@ import java.util.List;
 
 public class Customer
 {
+	private static final double REGULAR_INITIAL_BONUS = 2;
+	private static final double REGULAR_MIN_BONUS_DAYS = 2;
+	private static final double REGULAR_DAY_BONUS = 1.5;
+
+	private static final double NEW_RELEASE_DAY_BONUS = 3;
+
+	private static final double CHILDRENS_INITIAL_BONUS = 1.5;
+	private static final double CHILDRENS_MIN_BONUS_DAYS = 3;
+	private static final double CHILDRENS_DAY_BONUS = 1.5;
+
 	private String m_Name;
 	private List<Rental> m_Rentals = new ArrayList<Rental>();
 
@@ -17,7 +27,6 @@ public class Customer
 	{
 		return m_Name;
 	}
-
 
 	public void addRental(Rental arg)
 	{
@@ -33,31 +42,7 @@ public class Customer
 
 		for (Rental each : m_Rentals)
 		{
-			double thisAmount = 0;
-
-			// Determine amounts for each line
-			switch (each.getMovie().getPriceCode())
-			{
-				case Regular:
-					thisAmount += 2;
-					if (each.getDaysRented() > 2)
-					{
-						thisAmount += (each.getDaysRented() - 2) * 1.5;
-					}
-					break;
-
-				case NewRelease:
-					thisAmount += each.getDaysRented() * 3;
-					break;
-
-				case Childrens:
-					thisAmount += 1.5;
-					if (each.getDaysRented() > 3)
-					{
-						thisAmount = (each.getDaysRented() - 3) * 1.5;
-					}
-					break;
-			}
+			double thisAmount = getBonusForTargetPriceCode(each.getMovie().getPriceCode(), each.getDaysRented());
 
 			// Add frequent renter points
 			frequentRenterPoints++;
@@ -77,6 +62,45 @@ public class Customer
 		result += "Amount owed is " + totalAmount + "\n";
 		result += "You earned " + frequentRenterPoints + " frequent renter points.";
 		return result;
+	}
+
+    private double getBonusForTargetPriceCode(PriceCodes priceCode, int daysRented)
+    {
+        switch (priceCode)
+        {
+            case Regular:
+                return calculateBonusForRegularPriceCode(daysRented);
+
+            case NewRelease:
+                return calculateBonusForNewReleasePriceCode(daysRented);
+
+            case Childrens:
+                return calculateBonusForChildrensPriceCode(daysRented);
+        }
+
+        return 0;
+    }
+
+	private double calculateBonusForRegularPriceCode(int daysRented)
+	{
+		double resultAmount = REGULAR_INITIAL_BONUS;
+		if (daysRented > REGULAR_MIN_BONUS_DAYS)
+			resultAmount += (daysRented - REGULAR_MIN_BONUS_DAYS) * REGULAR_DAY_BONUS;
+
+		return resultAmount;
+	}
+
+	private double calculateBonusForNewReleasePriceCode(int daysRented)
+	{
+		return daysRented * NEW_RELEASE_DAY_BONUS;
+	}
+
+	private double calculateBonusForChildrensPriceCode(int daysRented)
+	{
+		double resultAmount = CHILDRENS_INITIAL_BONUS;
+		if (daysRented > CHILDRENS_MIN_BONUS_DAYS)
+			resultAmount += (daysRented - CHILDRENS_MIN_BONUS_DAYS) * CHILDRENS_DAY_BONUS;
+		return resultAmount;
 	}
 }
 
