@@ -47,7 +47,8 @@ public class CustomerRentalParamTest
         return Arrays.asList(new RentalPriceIndex(PriceCodes.Childrens, 1, 1.5)
                 , new RentalPriceIndex(PriceCodes.NewRelease, 1, 3)
                 , new RentalPriceIndex(PriceCodes.Regular, 1, 2)
-                , new RentalPriceIndex(PriceCodes.Regular, 2, 2));
+                , new RentalPriceIndex(PriceCodes.Regular, 2, 2)
+                , new RentalPriceIndex(PriceCodes.Regular, 5, 6.5));
     }
 
     private static void checkMoviePrice(String movieName, double price, String actualStatement)
