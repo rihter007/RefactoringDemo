@@ -25,24 +25,6 @@ public class Customer
         return this.name;
     }
 
-    /*public double getTotalPayment()
-    {
-        double totalAmount = 0.0;
-        for (Rental rentalInfo : this.rentals)
-            totalAmount += rentalInfo.totalAmount;
-
-        return totalAmount;
-    }
-
-    public int getTotalBonus()
-    {
-        int frequentRenterPoints = 0;
-        for (Rental rentalInfo : this.rentals)
-            frequentRenterPoints += rentalInfo.frequentPoints;
-
-        return frequentRenterPoints;
-    }*/
-
 	public void Statement(IReportCreator report, IPriceCalculator priceCalculator)
     {
         report.initialize(this.name);
@@ -54,8 +36,6 @@ public class Customer
 
         report.finish(null);
     }
-
-
 
     private static int getFrequentPointsForRental(Rental rental)
     {

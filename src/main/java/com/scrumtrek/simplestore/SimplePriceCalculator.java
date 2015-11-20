@@ -61,6 +61,5 @@ public class SimplePriceCalculator implements IPriceCalculator
         }
 
         throw new AssertionError();
-
     }
 }
