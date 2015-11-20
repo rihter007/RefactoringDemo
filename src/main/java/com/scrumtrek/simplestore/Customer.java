@@ -15,22 +15,22 @@ public class Customer
 	private static final double CHILDRENS_MIN_BONUS_DAYS = 3;
 	private static final double CHILDRENS_DAY_BONUS = 1.5;
 
-	private String m_Name;
-	private List<Rental> m_Rentals = new ArrayList<Rental>();
+	private String name;
+	private List<Rental> rentals = new ArrayList<Rental>();
 
 	public Customer(String name)
 	{
-		m_Name = name;
+		this.name = name;
 	}
 
 	public String getName()
 	{
-		return m_Name;
+		return this.name;
 	}
 
 	public void addRental(Rental arg)
 	{
-		m_Rentals.add(arg);
+		this.rentals.add(arg);
 	}
 
 	public String Statement()
@@ -38,9 +38,9 @@ public class Customer
 		double totalAmount = 0;
 		int frequentRenterPoints = 0;
 
-		String result = "Rental record for " + m_Name + "\n";
+		String result = "Rental record for " + this.name + "\n";
 
-		for (Rental each : m_Rentals)
+		for (Rental each : this.rentals)
 		{
 			double thisAmount = getBonusForTargetPriceCode(each.getMovie().getPriceCode(), each.getDaysRented());
 
